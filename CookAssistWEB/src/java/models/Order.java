@@ -1,20 +1,23 @@
 package models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Order {
     private int code;
     private String description;
-    private OrderDetail[] detail;
     private User user;
     private Chef chef;
-    private Rating[] rating;
     private Bill bill;
+    private  List<OrderDetail> ListOrderDetails = new ArrayList<OrderDetail>(){};
+    private  List<Rating> ListRatings = new ArrayList<Rating>(){};
     
-    public Order(int code, String description, OrderDetail detail[], User user){
+    
+    public Order(int code, String description, List<OrderDetail> ListOrderDetails, User user){
         this.code = code;
         this.description = description;
-        this.detail = detail;
         this.user = user;
-                
+        this.ListOrderDetails = ListOrderDetails;
     }
     
     public int getCode(){
@@ -32,13 +35,29 @@ public class Order {
     public void setDescription(String description){
         this.description = description;
     }
-    
-    public OrderDetail[] getOrder(){
-        return detail;
+
+    public List<OrderDetail> getListOrderDetails() {
+        return ListOrderDetails;
+    }
+
+    public void setListOrderDetails(List<OrderDetail> ListOrderDetails) {
+        this.ListOrderDetails = ListOrderDetails;
     }
     
-    public void setOrderDetail(OrderDetail detail[]){
-        this.detail = detail;
+    public void setOrderDetail(OrderDetail order_detail) {
+        this.ListOrderDetails.add(order_detail);
+    }
+
+    public List<Rating> getListRatings() {
+        return ListRatings;
+    }
+
+    public void setListRatings(List<Rating> ListRatings) {
+        this.ListRatings = ListRatings;
+    }
+    
+    public void setRating(Rating rating) {
+        this.ListRatings.add(rating);
     }
     
     public User getUser(){
@@ -55,14 +74,6 @@ public class Order {
     
     public void setChef(Chef chef){
         this.chef = chef;
-    }
-    
-    public Rating[] getRating(){
-        return rating;
-    }
-    
-    public void setRating(Rating rating[]){
-        this.rating = rating;
     }
     
     public Bill getBill(){

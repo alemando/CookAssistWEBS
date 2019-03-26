@@ -1,5 +1,7 @@
 package models;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class User {
     private String type_user;
@@ -7,9 +9,9 @@ public class User {
     private String email;
     private Date born_date;
     private boolean status;
-    private Rating[] rating;
-    private Order[] order;
-    private Bill[] bill;
+    private  List<Rating> ListRatings = new ArrayList<Rating>(){};
+    private  List<Order> ListOrders = new ArrayList<Order>(){};
+    private  List<Bill> ListBills = new ArrayList<Bill>(){};
     
     public User(String type_user, String name, String email, Date born_date, boolean status){
         this.type_user = type_user;
@@ -27,6 +29,42 @@ public class User {
     public void setTypeUser(String typeuser) {
         this.type_user = typeuser;
         
+    }
+
+    public List<Rating> getListRatings() {
+        return ListRatings;
+    }
+
+    public void setListRatings(List<Rating> ListRatings) {
+        this.ListRatings = ListRatings;
+    }
+    
+    public void setRating(Rating rating) {
+        this.ListRatings.add(rating);
+    }
+
+    public List<Order> getListOrders() {
+        return ListOrders;
+    }
+
+    public void setListOrders(List<Order> ListOrders) {
+        this.ListOrders = ListOrders;
+    }
+    
+    public void setOrder(Order order) {
+        this.ListOrders.add(order);
+    }
+
+    public List<Bill> getListBills() {
+        return ListBills;
+    }
+
+    public void setListBills(List<Bill> ListBills) {
+        this.ListBills = ListBills;
+    }
+    
+    public void setBill(Bill bill) {
+        this.ListBills.add(bill);
     }
     
     public String getName(){
@@ -61,29 +99,4 @@ public class User {
         this.status = status;
     }
     
-    public Rating[] getRating(){
-        return rating;
-    }
-    
-    public void setRating(Rating rating[]){
-        this.rating = rating;
-    }
-    
-    public Order[] getOrder(){
-        return order;
-    }
-    
-    public void setOrder(Order order[]){
-        this.order = order;
-    }
-    
-    public Bill[] getBill(){
-        return bill;
-    }
-    
-    public void setBill(Bill bill[]){
-        this.bill = bill;
-    }
 }   
-
-

@@ -7,6 +7,7 @@ public class Rating {
     private Order order;
     private User user;
     private Chef chef;
+    private Product product;
     
     public Rating(int code, int score, String description, Order order, User user){
         this.code = code;
@@ -54,6 +55,14 @@ public class Rating {
     
     public void setUser(User user){
         this.user = user;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
     
     public Chef getChef(){

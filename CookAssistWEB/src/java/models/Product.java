@@ -9,7 +9,8 @@ public class Product {
     private String description;
     private String category;
     private boolean avaliable;
-    private  List<OrderDetail> order_detail = new ArrayList<OrderDetail>(){};
+    private  List<Rating> ListRatings = new ArrayList<Rating>(){};
+    private  List<OrderDetail> ListOrderDetails = new ArrayList<OrderDetail>(){};
     
     public Product(int code, String name, String description, String category, boolean avaliable){
         this.code = code;
@@ -18,8 +19,9 @@ public class Product {
         this.category = category;
         this.avaliable = avaliable;
     }
+    public Product(){
+    }
 
-    
     public int getCode(){
         return code;
     }
@@ -59,13 +61,29 @@ public class Product {
     public void setAvaliable(boolean avaliable){
         this.avaliable = avaliable; 
     }
-    
-    public List<OrderDetail> getOrder_detail() {
-        return order_detail;
+
+    public List<Rating> getListRatings() {
+        return ListRatings;
     }
 
-    public void setOrder_detail(List<OrderDetail> order_detail) {
-        this.order_detail = order_detail;
+    public void setListRatings(List<Rating> ListRatings) {
+        this.ListRatings = ListRatings;
+    }
+    
+    public void setRating(Rating rating) {
+        this.ListRatings.add(rating);
+    }
+
+    public List<OrderDetail> getListOrderDetails() {
+        return ListOrderDetails;
+    }
+
+    public void setListOrderDetails(List<OrderDetail> ListOrderDetails) {
+        this.ListOrderDetails = ListOrderDetails;
+    }
+    
+    public void setOrderDetail(OrderDetail order_detail) {
+        this.ListOrderDetails.add(order_detail);
     }
     
  
