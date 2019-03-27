@@ -8,13 +8,23 @@ public class Rating {
     private User user;
     private Chef chef;
     private Product product;
+    private String url;
     
-    public Rating(int code, int score, String description, Order order, User user){
+    public Rating(int code, int score, String description, Order order, User user, String url){
         this.code = code;
         this.score = score;
         this.description = description;
         this.order = order;
         this.user = user;
+        this.url = url;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
     
     public int getCode(){

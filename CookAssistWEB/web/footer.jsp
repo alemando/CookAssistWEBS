@@ -84,7 +84,8 @@
                 </div>
             </div>
         </footer>
-        <script src="./js/jquery-3.3.1.min.js"></script>
-        <script src="./js/bootstrap.min.js"></script>
+        <script src="<c:url value="/js/jquery-3.3.1.min.js"/>"></script>
+        <script src="<c:url value="/js/bootstrap.min.js"/>"></script>
+        <script src="<c:url value="/js/file_name.js"/>"></script>
     </body>
 </html>

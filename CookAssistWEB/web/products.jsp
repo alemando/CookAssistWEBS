@@ -3,31 +3,29 @@
     <section>
         <div class="container-fluid">
             <div class="row">
-                <div id="sidebar" class="col-md-2">
-                    <div id="nav_div">
-                        <h4>Utilities</h4>
-                        <ul class="link-list">
-                            <li>
-                                <a href="#">Link 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Link 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Link 3</a>
-                            </li>
-                            <li>
-                                <a href="#">Link 4</a>
-                            </li>
-                            <li>
-                                <a href="#">Link 5</a>
-                            </li>
-                        </ul>
+                <%@ include file="nav_div_product.jsp" %>
+                <div class="col-md-10 content">
+                    <div class="row">
+                        <h2>Productos</h2>
                     </div>
-                </div>
-                <div class="col-md-10">
-                    <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate minus quaerat quisquam quae voluptas repellat vitae veritatis temporibus nisi magnam eum molestias, distinctio laboriosam debitis officiis nam totam nesciunt quis?
+                    <div class="row">
+                        <div class="content table-responsive">
+                            <table class="table table-bordered table-hover">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Descripción</th>
+                                        <th scope="col">Valor</th>
+                                        <th scope="col">Modalidad</th>
+                                        <th scope="col">Intensidad</th>
+                                        <th scope="col">Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
