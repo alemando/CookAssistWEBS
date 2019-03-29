@@ -6,6 +6,11 @@ body{
     min-height:100%;
     padding-top: 60px;
 }
+
+h2{
+    padding: 10px;
+}
+
 .header_nav{
     background-color: #9b9b9b;
     height: 60px;

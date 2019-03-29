@@ -3,10 +3,10 @@
         <h4>Utilities</h4>
         <ul class="link-list">
             <li>
-                <a href="<c:url value="/products/new"/>">Crear</a>
+                <a href=<c:url value="/products?option=new"/>>Crear</a>
             </li>
             <li>
-                <a href="<c:url value="/products"/>">Listar productos</a>
+                <a href=<c:url value="/products?option=show"/>>Listar productos</a>
             </li>
             <li>
                 <a href="#">Link 3</a>

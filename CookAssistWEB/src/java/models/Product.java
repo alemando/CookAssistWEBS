@@ -4,20 +4,47 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Product {
+    public static int cons = 0;
     private int code;
     private String name;
     private String description;
+    private int price;
     private String category;
-    private boolean avaliable;
+    private boolean available;
+    private String image_url;
     private  List<Rating> ListRatings = new ArrayList<Rating>(){};
     private  List<OrderDetail> ListOrderDetails = new ArrayList<OrderDetail>(){};
     
-    public Product(int code, String name, String description, String category, boolean avaliable){
-        this.code = code;
+    public Product(int code, String name, String description, int price, 
+            String category, String image_url, boolean available){
+        if(code == 0){
+            Product.cons ++;
+            this.code = Product.cons;
+        }else{
+            this.code = code;
+        }
         this.name = name;
         this.description = description;
+        this.price = price;
         this.category = category;
-        this.avaliable = avaliable;
+        this.image_url = image_url;
+        this.available = available;
+    }
+
+    public String getImageUrl() {
+        return image_url;
+    }
+
+    public void setImageUrl(String image_url) {
+        this.image_url = image_url;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
     public Product(){
     }
@@ -54,12 +81,12 @@ public class Product {
         this.category = category;
     }
     
-    public boolean getAvaliable(){
-        return avaliable;
+    public boolean getAvailable(){
+        return available;
     }
     
-    public void setAvaliable(boolean avaliable){
-        this.avaliable = avaliable; 
+    public void setAvailable(boolean available){
+        this.available = available; 
     }
 
     public List<Rating> getListRatings() {
@@ -86,5 +113,25 @@ public class Product {
         this.ListOrderDetails.add(order_detail);
     }
     
+    public static String category_interpreter(String category){
+        String str;
+        //Remplazar por hashmap
+        if (category.equals("1")){
+            str = "Bebidas";
+        }else{
+            str = "Entradas";
+        }
+        return str;
+    }
+    
+    public static String available_interpreter(Boolean available){
+        String str;
+        if (available){
+            str = "Disponible";
+        }else{
+            str = "No disponible";
+        }
+        return str;
+    }
  
 }

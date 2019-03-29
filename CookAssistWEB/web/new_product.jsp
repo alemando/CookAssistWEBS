@@ -5,7 +5,7 @@
             <div class="row">
                 <%@ include file="nav_div_product.jsp" %>
                 <div class="col-md-10 content">
-                    <form action="<c:url value="/products/new"/>" class="form-horizontal" method="POST" enctype="multipart/form-data">
+                    <form action="<c:url value="/products?option=new"/>" class="form-horizontal" method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label>* Nombre: </label>
@@ -16,7 +16,7 @@
                                 <textarea id="description" class="form-control" name="description" required></textarea>
                             </div>
                         </div>
-                        <diV class="row">
+                        <div class="row">
                             <div class="form-group col-md-6">
                                 <label>* Categoria</label>
                                 <select id="category" class="form-control" name="category" required>
@@ -26,14 +26,19 @@
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
+                                <label>* Precio</label>
+                                <input id="price" class="form-control"  type="number" name="price" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-12">
                                 <label>* Imagen</label>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="image" name="image">
                                     <label class="custom-file-label" for="image">Choose file</label>
                                 </div>
                             </div>
-                            
-                        </diV>
+                        </div>
                         <div class="row">
                             <div class="col-md">
                                 <p id="men_obl">Campos marcados con (*) son obligatorios.</p>
